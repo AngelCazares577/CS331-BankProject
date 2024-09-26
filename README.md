@@ -5,6 +5,7 @@ Bank Database System - Phase 1
 
 </div>
 🚀 Overview
+
 Welcome to Phase 1 of the Bank Database System! This phase is all about laying the groundwork for a robust database that will manage operations across customers, bank employees, branches, accounts, transactions, and loans. We're building this system to be reliable, scalable, and easy to maintain. Let's dive into the architecture and what makes up the backbone of our banking application.
 
 📐 Features
