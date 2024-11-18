@@ -26,7 +26,7 @@ CREATE TABLE EMPLOYEE(
     phoneNo CHAR(10),
     sex CHAR(1),
     dob DATE,
-    salary DECIMAL,
+    salary DECIMAL(15,2),
     street VARCHAR(20),
     state CHAR(2),
     city VARCHAR(1250),
@@ -38,7 +38,7 @@ CREATE TABLE BRANCH (
     branchID VARCHAR(5) NOT NULL,
     street VARCHAR(20) NOT NULL,
     state CHAR(2) NOT NULL,
-    city VARCHAR(25) NOT NULL UNIQUE,
+    city VARCHAR(25) NOT NULL,
     zipCode CHAR(5) NOT NULL,
     managerSSN CHAR(9),
     assistantManagerSSN CHAR(9),
@@ -111,7 +111,7 @@ amount DECIMAL(15, 2) NOT NULL,
 transaction_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
 transaction_date DATE DEFAULT CURRENT_DATE NOT NULL, 
 charge NUMBER(1) NOT NULL, 
-PRIMARY KEY (accountNo, code),
+PRIMARY KEY (code),
 FOREIGN KEY (accountNo) REFERENCES ACCOUNT(accountNo) ON DELETE CASCADE);
 
 CREATE TABLE HOLDS(
@@ -124,7 +124,7 @@ FOREIGN KEY (loanNo) REFERENCES LOAN(loanNo) ON DELETE CASCADE);
 CREATE TABLE OVERDRAFT(
 accountNo CHAR(5) NOT NULL,
 amount DECIMAL(15, 2) NOT NULL,
-PRIMARY KEY (accountNo),
+PRIMARY KEY (accountNo, amount),
 FOREIGN KEY (accountNo) REFERENCES ACCOUNT(accountNo)ON DELETE CASCADE);
 
 CREATE TABLE TAKES_OUT(
