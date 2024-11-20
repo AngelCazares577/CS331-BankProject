@@ -13,7 +13,7 @@ WHERE B.BranchID = E.BranchID AND D.ESSN = E.SSN
 GROUP BY B.BranchID
 HAVING COUNT(*) > 1;
 
-/* Select the employees salaries higher than those of employees in Branch 1 */
+/* Select the employees salaries higher than all of the employees in Branch 1 */
 
 SELECT E.SSN, E.FNAME, E.SALARY, E.BRANCHID
 FROM EMPLOYEE E
